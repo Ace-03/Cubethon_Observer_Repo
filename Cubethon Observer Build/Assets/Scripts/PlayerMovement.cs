@@ -34,5 +34,14 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<GameManager>().EndGame(null);
         }
+
+        if (rb.position.z >= 100f)
+            FindObjectOfType<GameManager>().EffectCube("grow");
+
+        if (rb.position.z >= 200)
+            FindObjectOfType<GameManager>().EffectCube("color");
+
+        if (rb.position.z >= 300)
+            FindObjectOfType<GameManager>().EffectCube("DoAFlip");
     }
 }

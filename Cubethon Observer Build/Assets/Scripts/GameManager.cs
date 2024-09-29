@@ -45,6 +45,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void EffectCube(string effect)
+    {
+        if (effect == "grow")
+            player.transform.localScale = new Vector3(2, 2, 2);
+
+        if (effect == "color")
+            GameObject.Find("Player").GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
+
+        if(effect == "DoAFlip")
+            player.transform.rotation = new Quaternion(Random.value, Random.value, Random.value, Random.value);
+    }
+
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
